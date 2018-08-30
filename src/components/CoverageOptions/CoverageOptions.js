@@ -8,7 +8,9 @@ const CoverageOptions = props => {
           <p>{optionGroup.title}</p>
           <select onChange={(e) => props.onChooseOption(optionGroup.name, e.target.value)}>
             {optionGroup.options.map(option =>
-              <option>{option.name}</option>)}
+              <option 
+                selected={props.limits[optionGroup.name] === option.value}
+                value={option.value}>{option.name}</option>)}
           </select>
         </div>
       );
