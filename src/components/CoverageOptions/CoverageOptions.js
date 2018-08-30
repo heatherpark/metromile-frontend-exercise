@@ -6,7 +6,7 @@ const CoverageOptions = props => {
       return (
         <div>
           <p>{optionGroup.title}</p>
-          <select>
+          <select onChange={(e) => props.onChooseOption(optionGroup.name, e.target.value)}>
             {optionGroup.options.map(option =>
               <option>{option.name}</option>)}
           </select>
