@@ -17,6 +17,13 @@ class EditCoverage extends Component {
     }));
   }
 
+  onSaveLimits = () => {
+    this.state.chosenLimits &&
+      this.props.saveLimits(this.state.chosenLimits);
+
+    this.props.showEditPage(false);
+  }
+
   render() {
     return (
       <div>
@@ -24,7 +31,12 @@ class EditCoverage extends Component {
           limits={this.state.chosenLimits || this.props.currentLimits}
           onChooseOption={this.onChooseOption}
           options={this.props.coverageOptions} />
-        <CoverageChanges />
+        <CoverageChanges
+          showEditPage={this.props.showEditPage}
+          onSaveLimits={this.onSaveLimits}
+          options={this.props.coverageOptions}
+          chosenLimits={this.state.chosenLimits}
+          currentLimits={this.props.currentLimits} />
       </div>
     );
   }
