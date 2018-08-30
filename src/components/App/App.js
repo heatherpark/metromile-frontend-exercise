@@ -14,7 +14,11 @@ class App extends Component {
     editing: false
   }
 
-  showEditPage = (editing) => {
+  saveLimits = newLimits => {
+    this.setState({ currentLimits: newLimits });
+  }
+
+  showEditPage = editing => {
     this.setState({ editing });
   }
 
@@ -22,7 +26,8 @@ class App extends Component {
     return (
       <div className="App">
         {this.state.editing ? 
-          <EditCoverage /> 
+          <EditCoverage
+            saveLimits={this.saveLimits} /> 
           : <CoverageLimits
               showEditPage={this.showEditPage} />}
       </div>
