@@ -7,8 +7,13 @@ const CoverageLimits = props => {
     for (let key in props.currentLimits) {
       if (key !== 'name') {
         limits.push(
-          <div>
-            {getCoverageTitle(props.coverageOptions, key)} {getOptionName(props.coverageOptions, key, props.currentLimits[key])}
+          <div className="limit">
+            <span>
+              {getCoverageTitle(props.coverageOptions, key)}
+            </span>
+            <span>
+              {getOptionName(props.coverageOptions, key, props.currentLimits[key])}
+            </span>
           </div>
         );
       }
@@ -38,12 +43,12 @@ const CoverageLimits = props => {
   };
 
   return (
-    <div>
-      <div>{props.currentLimits && props.currentLimits.name}</div>
-      <div>
+    <div className="container">
+      <div className="header">{props.currentLimits && props.currentLimits.name}</div>
+      <div className="limits">
         {renderLimits()}
       </div>
-      <p onClick={() => props.showEditPage(true)}>Edit Coverage</p>
+      <p className="link" onClick={() => props.showEditPage(true)}>Edit Coverage</p>
     </div>
   );
 };
