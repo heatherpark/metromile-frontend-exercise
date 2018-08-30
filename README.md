@@ -1,0 +1,3 @@
+- Run `npm install`
+- Run `npm start`
+- Project will open on http://localhost:3000/
