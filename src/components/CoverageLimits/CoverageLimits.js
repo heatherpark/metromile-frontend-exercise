@@ -6,7 +6,11 @@ const CoverageLimits = props => {
 
     for (let key in props.currentLimits) {
       if (key !== 'name') {
-        limits.push(<div>{getCoverageTitle(props.coverageOptions, key)} {props.currentLimits[key]}</div>);
+        limits.push(
+          <div>
+            {getCoverageTitle(props.coverageOptions, key)} {getOptionName(props.coverageOptions, key, props.currentLimits[key])}
+          </div>
+        );
       }
     }
 
@@ -21,13 +25,17 @@ const CoverageLimits = props => {
     }
   };
 
-  // const getOptionName = (coverageOptions, optionName, optionValue) => {
-  //   for (let optionType of coverageOptions) {
-  //     if ( === optionType.name) {
-  //       return optionType.title;
-  //     }
-  //   }
-  // };
+  const getOptionName = (coverageOptions, coverageName, optionValue) => {
+    for (let coverageType of coverageOptions) {
+      if (coverageName === coverageType.name) {
+        for (let option of coverageType.options) {
+          if (optionValue === option.value) {
+            return option.name;
+          }
+        }
+      }
+    }
+  };
 
   return (
     <div>
