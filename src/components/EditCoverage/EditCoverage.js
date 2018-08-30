@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 
+import CoverageOptions from '../CoverageOptions/CoverageOptions';
+import CoverageChanges from '../CoverageChanges/CoverageChanges';
+
 class EditCoverage extends Component {
   render() {
     return (
-      <div>EditCoverage</div>
+      <div>
+        <CoverageOptions />
+        <CoverageChanges />
+      </div>
     );
   }
 }
