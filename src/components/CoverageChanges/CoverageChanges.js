@@ -39,7 +39,8 @@ const CoverageChanges = props => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <p className="header">Coverage Changes</p>
       {renderLimits()}
       <p className="link" onClick={props.onSaveLimits}>Save Changes</p>
       <p className="link" onClick={() => props.showEditPage(false)}>Cancel Changes</p>

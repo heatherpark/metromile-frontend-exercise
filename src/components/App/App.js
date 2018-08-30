@@ -11,7 +11,8 @@ class App extends Component {
   state = {
     coverageOptions: coverages.coverageOptions,
     currentLimits: vehicle,
-    editing: false
+    editing: false,
+    vehicle: vehicle.name
   }
 
   saveLimits = newLimits => {
@@ -28,10 +29,12 @@ class App extends Component {
         {this.state.editing ? 
           <EditCoverage
             currentLimits={this.state.currentLimits}
+            vehicle={this.state.vehicle}
             coverageOptions={this.state.coverageOptions}
             saveLimits={this.saveLimits}
             showEditPage={this.showEditPage} /> 
           : <CoverageLimits
+              vehicle={this.state.vehicle}
               coverageOptions={this.state.coverageOptions}
               currentLimits={this.state.currentLimits}
               showEditPage={this.showEditPage} />}

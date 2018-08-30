@@ -28,6 +28,7 @@ class EditCoverage extends Component {
     return (
       <div>
         <CoverageOptions 
+          vehicle={this.props.vehicle}
           limits={this.state.chosenLimits || this.props.currentLimits}
           onChooseOption={this.onChooseOption}
           options={this.props.coverageOptions} />

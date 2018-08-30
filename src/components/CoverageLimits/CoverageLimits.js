@@ -44,7 +44,7 @@ const CoverageLimits = props => {
 
   return (
     <div className="container">
-      <div className="header">{props.currentLimits && props.currentLimits.name}</div>
+      <div className="header">{props.vehicle}</div>
       <div className="limits">
         {renderLimits()}
       </div>

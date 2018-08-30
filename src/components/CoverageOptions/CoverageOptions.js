@@ -5,7 +5,7 @@ const CoverageOptions = props => {
     return options.map(optionGroup => {
       return (
         <div>
-          <h2 className="header">{optionGroup.title}</h2>
+          <p className="header">{optionGroup.title}</p>
           <select onChange={(e) => props.onChooseOption(optionGroup.name, e.target.value)}>
             {optionGroup.options.map(option =>
               <option 
@@ -19,6 +19,7 @@ const CoverageOptions = props => {
 
   return (
     <div className="container">
+      <p className="header">{props.vehicle}</p>
       {renderOptions(props.options)}
     </div>
   );
