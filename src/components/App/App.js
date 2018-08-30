@@ -29,6 +29,7 @@ class App extends Component {
           <EditCoverage
             saveLimits={this.saveLimits} /> 
           : <CoverageLimits
+              currentLimits={this.state.currentLimits}
               showEditPage={this.showEditPage} />}
       </div>
     );
