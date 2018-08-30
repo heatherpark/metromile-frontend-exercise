@@ -9,7 +9,7 @@ import vehicle from '../../data/vehicle';
 
 class App extends Component {
   state = {
-    coverageOptions: coverages,
+    coverageOptions: coverages.coverageOptions,
     currentLimits: vehicle,
     editing: false
   }
@@ -29,6 +29,7 @@ class App extends Component {
           <EditCoverage
             saveLimits={this.saveLimits} /> 
           : <CoverageLimits
+              coverageOptions={this.state.coverageOptions}
               currentLimits={this.state.currentLimits}
               showEditPage={this.showEditPage} />}
       </div>
