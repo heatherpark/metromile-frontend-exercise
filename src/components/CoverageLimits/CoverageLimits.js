@@ -1,8 +1,11 @@
 import React from 'react';
 
-const CoverageLimits = () => {
+const CoverageLimits = props => {
   return (
-    <div>CoverageLimits</div>    
+    <div>
+      CoverageLimits
+      <p onClick={() => props.showEditPage(true)}>Edit Coverage</p>
+    </div>    
   );
 };
 

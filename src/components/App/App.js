@@ -14,10 +14,17 @@ class App extends Component {
     editing: false
   }
 
+  showEditPage = (editing) => {
+    this.setState({ editing });
+  }
+
   render() {
     return (
       <div className="App">
-        {this.state.editing ? <EditCoverage /> : <CoverageLimits />}
+        {this.state.editing ? 
+          <EditCoverage /> 
+          : <CoverageLimits
+              showEditPage={this.showEditPage} />}
       </div>
     );
   }
